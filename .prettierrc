@@ -1,0 +1,16 @@
+{
+  "tabWidth": 2,
+  "printWidth": 70,
+  "jsxSingleQuote": false,
+  "singleQuote": false,
+  "singleAttributePerLine": true,
+  "overrides": [
+    {
+      "files": "**/*.css.ts",
+      "options": {
+        "tabWidth": 4,
+        "printWidth": 100
+      }
+    }
+  ]
+}
