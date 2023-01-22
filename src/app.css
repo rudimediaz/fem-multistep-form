@@ -1,0 +1,41 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Ubuntu 400';
+	src: url(/fonts/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+	font-family: 'Ubuntu 500';
+	src: url(/fonts/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+	font-family: 'Ubuntu 700';
+	src: url(/fonts/Ubuntu-Bold.ttf);
+}
+
+@layer base {
+	:root {
+		--clr-p-marine: 213 96% 18%;
+		--clr-p-purplish: 243 100% 62%;
+		--clr-p-pastel: 228 100% 84%;
+		--clr-p-light: 206 94% 87%;
+		--clr-p-straw: 354 84% 57%;
+
+		--clr-n-1: 231 100% 99%;
+		--clr-n-2: 217 100% 97%;
+		--clr-n-3: 229 24% 87%;
+		--clr-n-4: 231 11% 45%;
+	}
+}
+
+@layer utilities {
+
+	.circle-shrink {
+		clip-path: circle(30% at 50%);
+	}
+}
