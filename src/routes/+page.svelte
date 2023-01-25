@@ -247,6 +247,7 @@
 	}
 </script>
 
+<h1 class="sr-only">subcription form</h1>
 <div class="flex flex-col dsk:grid dsk:place-items-center">
 	<div
 		class="flex flex-1 mbl:flex-col mbl:bg-[url(/images/bg-sidebar-mobile.svg)] mbl:bg-[100%_auto] mbl:bg-no-repeat dsk:grid dsk:h-[600px] dsk:w-[max(35em,70%)] dsk:grid-cols-[minmax(4rem,30%)_1fr] dsk:grid-rows-[1fr_auto] dsk:gap-x-4 dsk:rounded-lg dsk:bg-white dsk:p-4 dsk:shadow-xl"
@@ -267,10 +268,12 @@
 							class:active={indicator.active}>{indicator.order}</span
 						>
 					</div>
-					<div class="text-[0.75rem] uppercase mbl:sr-only">
+					<div
+						class="text-[0.75rem] uppercase text-ntrl-3 mbl:sr-only"
+					>
 						Step {indicator.order}
 					</div>
-					<div class="font-med uppercase mbl:sr-only">
+					<div class="font-med uppercase tracking-wider mbl:sr-only">
 						{indicator.label}
 					</div>
 				</div>

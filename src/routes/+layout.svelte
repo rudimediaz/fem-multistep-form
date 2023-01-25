@@ -3,6 +3,15 @@
 </script>
 
 <svelte:head>
+	<meta
+		name="description"
+		content="Frontend Mentor Challenge Solution"
+	/>
+	<meta
+		name="keywords"
+		content="frontend mentor, solution, challenge"
+	/>
+
 	<title>Frontend Mentor | Multi-step form</title>
 </svelte:head>
 
@@ -12,7 +21,7 @@
 	<main class="contents">
 		<slot />
 	</main>
-	<footer>
+	<footer class="pt-20 mbl:sr-only">
 		<div class="text-center text-[11px]">
 			Challenge by <a
 				class="text-[hsl(228_45%_44%)]"
