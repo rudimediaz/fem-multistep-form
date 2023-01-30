@@ -30,7 +30,7 @@
 				href="https://www.frontendmentor.io?ref=challenge"
 				target="_blank"
 				rel="noreferrer">Frontend Mentor</a
-			>. Coded by <a href="#!">Your Name Here</a>.
+			>. Coded by <a href="#!">Rudhi Mediastara</a>.
 		</div>
 	</footer>
 </div>
