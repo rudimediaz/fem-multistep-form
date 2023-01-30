@@ -31,9 +31,7 @@
 				id="focus-point"
 				value="you are on the top of the page, press tab to the next field"
 			/>
-			<label class="sr-only" for="focus-point"
-				>focus point press tab to continue</label
-			>
+
 			{#if slotName === 'info'}
 				<slot name="info" />
 			{:else if slotName === 'plan'}
