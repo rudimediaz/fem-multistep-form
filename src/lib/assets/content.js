@@ -60,7 +60,7 @@ export const plans = [
 
 /** @type {Addon[]} */
 export const addons = [
-    	{
+	{
 		id: generateId(),
 		name: 'Online Service',
 		description: 'Access to multiplayer games',
@@ -76,6 +76,6 @@ export const addons = [
 		id: generateId(),
 		name: 'Customizable Profile',
 		description: 'Custom theme on your profile',
-        price : 2
-    }   
-]
+		price: 2
+	}
+];
