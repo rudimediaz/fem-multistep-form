@@ -34,7 +34,6 @@
 }
 
 @layer utilities {
-
 	.circle-shrink {
 		clip-path: circle(30% at 50%);
 	}
