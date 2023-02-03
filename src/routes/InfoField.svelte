@@ -12,6 +12,7 @@
 	const USER_EMAIL = 'user_email';
 	const USER_PHONE = 'user_phone';
 	const IS_REQUIRED = 'This field is required';
+	const PATTERN_MISMATCH = 'Please insert the correct format';
 
 	const dispatch = createEventDispatcher();
 
@@ -34,6 +35,12 @@
 		name: false,
 		email: false,
 		phone: false
+	});
+
+	const invalidMessage = writable({
+		name: IS_REQUIRED,
+		email: IS_REQUIRED,
+		phone: IS_REQUIRED
 	});
 
 	const validities = derived(invalid, (v) => {
@@ -76,7 +83,20 @@
 	}
 
 	function handleInvalid(e) {
-		updateInvalid(e.target, true);
+		console.log(e.target.validity);
+
+		const getMessage = () => {
+			if (
+				e.target.validity.patternMismatch ||
+				e.target.validity.typeMismatch
+			) {
+				return PATTERN_MISMATCH;
+			}
+
+			return IS_REQUIRED;
+		};
+
+		updateInvalid(e.target, true, getMessage());
 	}
 
 	function checkValidity(target) {
@@ -87,16 +107,19 @@
 		}
 	}
 
-	function updateInvalid(target, isValid) {
+	function updateInvalid(target, isValid, message) {
 		switch (target.name) {
 			case USER_NAME:
 				$invalid.name = isValid;
+				$invalidMessage.name = message;
 				break;
 			case USER_EMAIL:
 				$invalid.email = isValid;
+				$invalidMessage.email = message;
 				break;
 			case USER_PHONE:
 				$invalid.phone = isValid;
+				$invalidMessage.phone = message;
 				break;
 		}
 	}
@@ -115,7 +138,7 @@
 		on:invalid={handleInvalid}
 		on:input={handleInput}
 		invalid={$invalid.name}
-		invalidMessage={IS_REQUIRED}
+		invalidMessage={$invalidMessage.name}
 	/>
 	<TextField
 		bind:ref={emailEl}
@@ -125,11 +148,12 @@
 		placeholder="e.g. stephenking@lorem.com"
 		bind:value={email}
 		required
+		type="email"
 		on:blur={handleBlur}
 		on:invalid={handleInvalid}
 		on:input={handleInput}
 		invalid={$invalid.email}
-		invalidMessage={IS_REQUIRED}
+		invalidMessage={$invalidMessage.email}
 	/>
 	<TextField
 		bind:ref={phoneEl}
@@ -143,6 +167,7 @@
 		on:invalid={handleInvalid}
 		on:input={handleInput}
 		invalid={$invalid.phone}
-		invalidMessage={IS_REQUIRED}
+		invalidMessage={$invalidMessage.phone}
+		pattern="\+\w+"
 	/>
 </div>
